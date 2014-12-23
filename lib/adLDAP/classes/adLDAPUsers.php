@@ -104,7 +104,7 @@ class adLDAPUsers {
 
         // Set the account control attribute
         $control_options = array("NORMAL_ACCOUNT");
-        if (!$attributes["enabled"]) { 
+        if (empty($attributes["enabled"])) { 
             $control_options[] = "ACCOUNTDISABLE"; 
         }
         $add["userAccountControl"][0] = $this->accountControl($control_options);
